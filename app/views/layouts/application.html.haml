@@ -11,6 +11,8 @@
   %p.alert= alert
 
   = yield
-
-  - Category.all.each do |category|
-    = link_to category.name, articles_path(category: category.name)
+  
+  %ul
+    %li= link_to "All Articles", root_path
+    - Category.all.each do |category|
+      %li= link_to category.name, articles_path(category: category.name)
